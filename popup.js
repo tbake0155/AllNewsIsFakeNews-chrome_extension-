@@ -15,17 +15,17 @@ function getCurrentTabUrl(callback){
 }
 
 function fakeIt(){
-    chrome.tabs.executeScript({
-           var str = document.body.innerHTML;
-           var res = str.replace(/news/gi, "fake news");
-           document.body.innerHTML = res;'
-    });
+    var str = document.body.innerHTML;
+    var res = str.replace(/news/gi, "fake news");
+    document.body.innerHTML = res;'
 }       
 
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl(url)  => {
     doc.addEventListener('fakeIt', () => {
-        fakeIt();
+        chrome.tabs.executeScript({
+            fakeIt();
+        });
     });
   });
 });
