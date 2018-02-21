@@ -17,7 +17,7 @@ function getCurrentTabUrl(callback){
 function fakeIt(){
     var str = document.body.innerHTML;
     var res = str.replace(/news/gi, "fake news");
-    document.body.innerHTML = res;'
+    document.body.innerHTML = res;
 }       
 
 document.addEventListener('DOMContentLoaded', () => {
