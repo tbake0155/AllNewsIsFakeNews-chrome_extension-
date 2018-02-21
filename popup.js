@@ -14,25 +14,22 @@ function getCurrentTabUrl(callback){
     });
 }
 
-function fakeIt(doc){
+function fakeIt(){
     function fakenews(doc) {
-           var res = doc.replace(/news/gi, "fake news");
-           doc.body.innerHTML = res;'
+           var str = document.body.innerHTML;
+           var res = str.replace(/news/gi, "fake news");
+           document.body.innerHTML = res;'
     }
 
     chrome.tabs.executeScript({
-        fakenews(doc);
+        fakenews();
     });
 }       
 
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl(url)  => {
-    var doc = document.body.innerHTML;
-
-    fakeIt(doc);
-
     doc.addEventListener('fakeIt', () => {
-        fakeIt(doc);
+        fakeIt();
     });
   });
 });
