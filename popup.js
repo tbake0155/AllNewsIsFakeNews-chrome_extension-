@@ -15,13 +15,14 @@ function getCurrentTabUrl(callback){
 }
 
 function fakeIt(){
-    var script ='
+    function fakenews() = {
            var str = document.body.innerHTML;
            var res = str.replace(/news/gi, "fake news");
            document.body.innerHTML = res;'
+    }
 
     chrome.tabs.executeScript({
-        code: script
+        fakenews();
     });
 }       
 
