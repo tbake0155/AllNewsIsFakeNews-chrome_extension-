@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
            var str = document.body.innerHTML;
            var res = str.replace(/news/gi, "fake news");
-           document.innerHTML = res;
+           document.body.innerHTML = res;
 
     }, false);
  }, false);          
