@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkPageButton.addEventListener('click', function() {
 
         chrome.tabs.getSelected(null, function(tab) {
-           var str = document.innerHTML;
+           var str = document.body.innerHTML;
            var res = str.replace(/news/gi, "fake news");
            document.innerHTML = res;
         });
