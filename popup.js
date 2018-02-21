@@ -15,13 +15,13 @@ function getCurrentTabUrl(callback){
 }
 
 function fakeIt(doc){
-    function fakenews() {
+    function fakenews(doc) {
            var res = doc.replace(/news/gi, "fake news");
            doc.body.innerHTML = res;'
     }
 
     chrome.tabs.executeScript({
-        fakenews();
+        fakenews(doc);
     });
 }       
 
