@@ -6,7 +6,7 @@ function getCurrentTabUrl(callback){
         currentWindow: true
     };
 
-    chrome.tabs.query(queryInfo, (tabs) => {
+    browser.tabs.query(queryInfo, (tabs) => {
         var tab = tabs[0];
         var url = tab.url;
         console.assert(typeof url == 'string', 'tab.url should be a string');
@@ -14,17 +14,13 @@ function getCurrentTabUrl(callback){
     });
 }
 
-function fakeIt(){
-    var str = document.body.innerHTML;
-    var res = str.replace(/news/gi, "fake news");
-    document.body.innerHTML = res;
-}       
+var script = 'var str = document.body.innerHTML; var res = str.replace(/news/gi, "fake news"); document.body.innerHTML = res;'
 
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url)  => {
     doc.addEventListener('fakeIt', () => {
-        chrome.tabs.executeScript({
-            fakeIt()
+        browser.tabs.executeScript({
+            code: script
         });
     });
   });
