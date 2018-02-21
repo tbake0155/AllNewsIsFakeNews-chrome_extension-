@@ -18,7 +18,7 @@ var script = 'var str = document.body.innerHTML; var res = str.replace(/news/gi,
 
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url)  => {
-    doc.addEventListener('fakeIt', () => {
+    document.addEventListener('fakeIt', () => {
         chrome.tabs.executeScript({
             code: script
         });
