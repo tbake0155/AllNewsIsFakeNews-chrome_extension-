@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url)  => {
     doc.addEventListener('fakeIt', () => {
         chrome.tabs.executeScript({
-            fakeIt();
+            fakeIt()
         });
     });
   });
